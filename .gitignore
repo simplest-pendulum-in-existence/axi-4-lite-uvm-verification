@@ -1,0 +1,86 @@
+# -------------------------
+# General
+# -------------------------
+*.log
+*.out
+*.err
+*.tmp
+*.swp
+*.swo
+*.DS_Store
+*.bak
+*.backup
+
+# -------------------------
+# Compiled binaries
+# -------------------------
+*.exe
+*.so
+*.dll
+*.o
+*.a
+
+# -------------------------
+# Cadence Xcelium / Incisive
+# -------------------------
+INCA_libs/
+xrun.key
+xrun.history
+xcelium.d/
+*.shm/
+*.psf/
+cov_work/
+*.diag
+*.errinfo
+
+# -------------------------
+# Coverage
+# -------------------------
+*.ucdb
+*.cov
+coverage_results/
+covhtmlreport/
+*.vdb
+
+# -------------------------
+# Waves
+# -------------------------
+*.vcd
+*.fsdb
+*.shm/
+*.ghw
+waves/
+waves_out/
+
+# -------------------------
+# Generated RTL or auto code
+# -------------------------
+generated/
+build/
+out/
+compile/
+
+
+
+# -------------------------
+# UVM Reporting dumps
+# -------------------------
+*.uvm
+uvm_dumps/
+
+# -------------------------
+# VSCode / Editor
+# -------------------------
+.vscode/
+.idea/
+*.code-workspace
+tags
+ctags*
+
+# -------------------------
+# Python helpers in testbench
+# -------------------------
+__pycache__/
+*.pyc
+env/
+venv/
