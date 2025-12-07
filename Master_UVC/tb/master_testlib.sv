@@ -9,9 +9,6 @@ class base_test extends uvm_test;
     
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-        uvm_config_wrapper::set(this, "tb.env1.tx_agent.sequencer.run_phase",
-                                "default_sequence", basic_seq::get_type());
-          
        //Enables transaction recording for all components
        uvm_config_int::set(this, "*", "recording_detail", 1);    
 
@@ -34,8 +31,8 @@ class base_test extends uvm_test;
 
 endclass
 
-class write_test extends base_test;
- `uvm_component_utils(write_test)
+class m_write_test extends base_test;
+  `uvm_component_utils(m_write_test)
 
   function new(string name, uvm_component parent);
         super.new(name, parent);
@@ -43,8 +40,10 @@ class write_test extends base_test;
 
   function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-        uvm_config_int::set(this, "*", "recording_detail", 1); 
-        uvm_config_wrapper::set(this, "tb.env1.tx_agent.sequencer.run_phase",
-                                "default_sequence", basic_seq::get_type());
+    uvm_config_wrapper::set(this, "tb.env1.tx_agent.sequencer.run_phase",
+                                "default_sequence", master_pipeline_seq::get_type());
+    uvm_config_wrapper::set(this, "tb.env2.rx_agent.sequencer.run_phase",
+                                "default_sequence", slave_simple_seq::get_type());
+    
     endfunction
 endclass

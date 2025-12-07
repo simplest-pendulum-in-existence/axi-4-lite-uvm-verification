@@ -1,0 +1,4 @@
++UVM_TESTNAME=m_write_test
++UVM_VERBOSITY=UVM_HIGH
++SVSEED=random
+
